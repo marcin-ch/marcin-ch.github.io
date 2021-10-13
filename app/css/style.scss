@@ -98,7 +98,7 @@
 
         li{
             &:not(:last-child){
-            margin-bottom: 200px;
+            margin-bottom: 100px;
             }
         }
     }
@@ -124,6 +124,10 @@
 }
 
 @media(max-width: 798px){
+    .showcase, showcase header{
+        padding: 10px;
+    }
+
     .showcase .text h2{
         font-size: 3em;
     }
