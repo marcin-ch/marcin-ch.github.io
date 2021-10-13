@@ -1,0 +1,134 @@
+/* Importing Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Universal selector to select everythig */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.showcase{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    z-index: 2; //to put showcase in front of menu
+    transition: 0.5s;
+
+    &.active{
+        right: 200px;
+    }
+
+    header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 40px 40px;
+        z-index: 1000; //to make sure menu button (hamburger) is on top of everything
+        display: flex; //to put elements in row
+        align-items: center;
+        justify-content: space-between;
+        }
+    
+    video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    }
+
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #003975;
+        mix-blend-mode: overlay;
+    }
+
+    .text{
+        position: relative;
+        z-index: 10;
+
+        h2{
+            font-size: 5em; //font size from parent multiplied by 5
+            font-weight: 800;
+            line-height: 1em;
+        }
+
+        h3{
+            font-size: 2em;
+            line-height: 1em;
+
+            a{
+                text-decoration: none;
+                color: #00ab67;
+            }
+        }
+    }
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00ab67;
+    
+    ul{
+        position: relative;
+        list-style: none;
+
+        li{
+            &:not(:last-child){
+            margin-bottom: 200px;
+            }
+        }
+    }
+}
+
+.toggle{
+    border: 3px solid #00ab67;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: url(/app/images/menu.png) no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+
+    &.active{
+        background: url(/app/images/close.png) no-repeat;
+        background-size: 25px;
+        background-position: center;
+    }
+}
+
+@media(max-width: 798px){
+    .showcase .text h2{
+        font-size: 3em;
+    }
+
+    .showcase .text h3{
+        font-size: 1em;
+    }
+}
